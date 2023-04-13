@@ -20,7 +20,7 @@ export default function Card({
         <p>Estado: {status}</p>
         <p>Origen: {origin}</p>
       </div>
-      <button onClick={onClose}>X</button>
+      <button onClick={() => onClose(id)}>X</button>
     </div>
   );
 }
