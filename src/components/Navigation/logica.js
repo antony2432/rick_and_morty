@@ -24,6 +24,11 @@ const urlPath = [
     path: "/episode",
     color: "#1b53ba"
   },
+  {
+    name: "About",
+    path: "/about",
+    color: "#464646"
+  }
 ];
 
 export { urlPath };

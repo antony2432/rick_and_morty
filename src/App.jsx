@@ -1,9 +1,11 @@
-import "./App.css";
-import Cards from "./components/Cards/Cards.jsx";
 import { useState } from "react";
 import axios from "axios";
-import SearchBar from "./components/SearchBar";
 import Navigation from "./components/Navigation";
+import { Route, Routes } from "react-router-dom";
+import RootPage from "./page/root/index.jsx";
+import About from "./page/about";
+import DetailPage from "./page/detail";
+import Error404 from "./page/404";
 
 function App() {
   const [characters, setCharacters] = useState([]);
@@ -27,10 +29,23 @@ function App() {
     setCharacters(newArray);
   };
   return (
-    <div className="App">
+    <div>
       <Navigation />
-      <SearchBar onSearch={onSearch} />
-      <Cards characters={characters} onClose={onClose} />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <RootPage
+              characters={characters}
+              onClose={onClose}
+              onSearch={onSearch}
+            />
+          }
+        />
+        <Route path="/about" element={<About />} />
+        <Route path="/detail/:id" element={<DetailPage />} />
+        <Route path="*" element={<Error404 />} />
+      </Routes>
     </div>
   );
 }

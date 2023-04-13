@@ -1,5 +1,6 @@
 .navigation {
   width: 100%;
+  height: 10vh;
   margin-top: 2px;
   margin-bottom: 20px;
 }
@@ -13,10 +14,6 @@
 .navigation ul li {
   width: 127px;
   height: 87px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #464646;
   border-bottom: 5px solid var(--hoverandborder);
 }
 
@@ -28,7 +25,17 @@
   border-bottom-right-radius: 5px;
 }
 
-.navigation ul li:hover{
+.navigation ul li .links {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: #464646;
+}
+
+.navigation ul li .links:hover {
   color: #fff;
   background-color: var(--hoverandborder);
 }
