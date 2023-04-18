@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import "./detail.css";
+import "./style.css";
 
 export default function DetailPage() {
   const { id } = useParams();
@@ -22,7 +22,7 @@ export default function DetailPage() {
     getData();
   }, []);
   return (
-    <main>
+    <main className="main-detail">
       <section className="contianer-img">
         <img src={character.image} alt={character.name} />
       </section>
@@ -31,6 +31,7 @@ export default function DetailPage() {
         <h2>Status | {character?.status}</h2>
         <h2>Gender | {character?.gender}</h2>
         <h2>Specie | {character?.species}</h2>
+        {/* <h3>asasda</h3> */}
         <h2>
           Cantidad de capitulos: {character.episode && character.episode.length}
         </h2>

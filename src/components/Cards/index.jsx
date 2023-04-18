@@ -1,7 +1,10 @@
 import Card from "../Card";
+import { useSelector } from "react-redux";
+import { allCharaters } from "../../redux/slices/charactersSlice";
 import "./cards.css";
 
-export default function Cards({ characters, onClose }) {
+export default function Cards() {
+  const characters = useSelector(allCharaters)
   return (
     <div className="list">
       {characters.map((c) => (
@@ -12,9 +15,9 @@ export default function Cards({ characters, onClose }) {
           status={c.status}
           species={c.species}
           gender={c.gender}
-          origin={c.origin.name}
+          origin={c?.origin.name}
           image={c.image}
-          onClose={onClose}
+          isFav={c.isFav}
         />
       ))}
     </div>
