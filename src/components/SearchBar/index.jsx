@@ -19,6 +19,7 @@ export default function SearchBar() {
 
   const onSearch = async (id) => {
     try {
+      if(id === '') return window.alert('el input esta vacio')
       const verification = characters.filter((c) => c.id === id);
       if (verification.length !== 0) {
         return window.alert("Ya se encuentra el personaje");
